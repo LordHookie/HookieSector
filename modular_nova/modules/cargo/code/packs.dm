@@ -718,3 +718,99 @@
 		/obj/item/seeds/starfruit = 2,
 		/obj/item/book/manual/starfruit = 1,
 	)
+
+	// hookie's stuff
+
+/datum/supply_pack/imports/FrontierResupply // "oops, engineering blew up!" order, for rounds that run long without infrastructure
+	name = "Frontier Resupply Crate"
+	desc = "Oioi! Plannin' on colonizin' ummthin' out in frontier space, eh? Or may'e yurr fancy station's fallin' 'part? \
+	's here crates go' all you nee'!"
+	cost = CARGO_CRATE_VALUE * 6
+	contains = list(
+		/obj/item/storage/backpack/industrial/frontier_colonist = 4,
+		/obj/item/radio/headset/headset_frontier_colonist = 4,
+		/obj/item/clothing/mask/gas/atmos/frontier_colonist = 4,
+	)
+	crate_type = /obj/structure/closet/crate/cargo
+	crate_name = "frontier resupply crate"
+
+// After this point, contraband - not just broad, but illegal and/or out there
+
+/datum/supply_pack/imports/syndieva
+	name = "Space Ops Crate"
+	desc = "(*!&@#LOOKING TO EXFIL, AGENT? THESE SUITS ARE ARMORED AND SPACEWORTHY, GUARANTEED TO KEEP YOU \
+		AND YOUR ALLIES (RELATIVELY) SAFE WHILE YOU'RE OUT IN THE COLD!#@*$"
+	hidden = TRUE
+	cost = CARGO_CRATE_VALUE * 8
+	contains = list(
+		/obj/item/clothing/head/helmet/space/syndicate = 1,
+		/obj/item/clothing/suit/space/syndicate = 1,
+		/obj/item/clothing/head/helmet/space/syndicate/green = 1,
+		/obj/item/clothing/suit/space/syndicate/green = 1,
+		/obj/item/clothing/head/helmet/space/syndicate/blue = 1,
+		/obj/item/clothing/suit/space/syndicate/blue = 1,
+		/obj/item/tank/jetpack/carbondioxide = 3
+	)
+	crate_type = /obj/structure/closet/crate/secure/syndicate/gorlex/weapons/bustedlock
+	crate_name = "space suit crate"
+
+/datum/supply_pack/imports/s120
+	name = "Smuggled CS S-120 Laser Carbine Crate" // summarily worse than the normal laser carbine, which is already bad
+	desc = "(*!&@#NOT A FAN OF BALLISTICS, AGENT? THAT'S FINE! RELATIVELY FINE, AT LEAST. \
+		WE CAN'T GET YOU ANY FANCY LASER CANNONS OR TALKING GUNS, BUT WHAT WE CAN GET YOU IS \
+		A SECURITY LASER CARBINE!!#@*$"
+	hidden = TRUE
+	cost = CARGO_CRATE_VALUE * 8
+	contains = list(
+		/obj/item/gun/energy/laser/carbine/cybersun/black_market_trader = 2, // no syndicate firing pin
+	)
+	crate_type = /obj/structure/closet/crate/secure/syndicate/gorlex/weapons/bustedlock
+	crate_name = "emergency crate"
+
+/datum/supply_pack/imports/scar1911 // wt-550 order but for the 1911, still never loaded
+	name = "Vintage Handgun Crate"
+	desc = "(*!&@#HEY, OPERATIVE, GREAT NEWS! OUR SALVAGE TEAMS HAVE FOUND SOME OF OUR HOLD HANDGUNS \
+		OUT IN THE VACUUM OF SPACE! THEY'RE STILL IN WORKING ORDER, BUT WE DIDN'T FIND MUCH AMMO, \
+		SO NO GUARANTEES IT'LL COME LOADED.!#@*$"
+	hidden = TRUE
+	cost = CARGO_CRATE_VALUE * 6
+	contains = list(
+		/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag = 1,
+		/obj/item/ammo_box/magazine/m45 = 1
+	)
+	crate_type = /obj/structure/closet/crate/secure/syndicate/gorlex/weapons/bustedlock // TECHNICALLY a scarborough
+	crate_name = "handgun crate"
+
+/datum/supply_pack/imports/covertops // Agent Crate p2. Has the less practical chameleon gear and a concealed handgun.
+	name = "Covert Ops Crate"
+	desc = "(*!&@#GOING INTO DEEP COVER, AGENT? THEN THESE SUPPLIES ARE FOR YOU! \
+		CONTAINS GEAR TO HELP YOU BLEND IN EVEN BETTER, AND A CONCEALED HANDGUN FOR WHEN YOU FUCK IT UP!#@*$"
+	hidden = TRUE
+	cost = CARGO_CRATE_VALUE * 12 // just because there's a gun in it, we'll jack up the price a bit
+	contains = list(
+		/obj/item/gun/ballistic/automatic/pistol, // Just a small size 1911.
+		/obj/item/ammo_box/magazine/m9mm = 1, // worried about balance here but this has about the TTK of a wespe with a shit mag size
+		/obj/item/clothing/gloves/chameleon,
+		/obj/item/clothing/head/chameleon, // not to be confused with the voice changer mask
+		/obj/item/clothing/suit/chameleon,
+		/obj/item/clothing/shoes/chameleon, // not the no slip ones
+	)
+	crate_type = /obj/structure/closet/crate/secure/syndicate/gorlex/weapons/bustedlock
+	crate_name = "outfit crate" // at a glance this is accurate
+
+/datum/supply_pack/imports/covertammo // Just ammo for the Makarov, and nothing else. Only useful for magazines, as ammo can be literally printed.
+	name = "Covert Ammunition Crate"
+	desc = "(*!&@#THINGS HEATING UP? FUCKING UP MORE THAN YOU THOUGHT YOU WOULD? JUST PARANOID? \
+		WE'E GOT YOU COVERED, AGENT! THIS IS A VARIETY AMMO CRATE FOR YOUR CONCEALED PISTOL.!#@*$"
+	hidden = TRUE
+	cost = CARGO_CRATE_VALUE * 6 // more illegal than wt550
+	contains = list( // there are incendiaries too but the idea is *subtle* not apocalyptic
+		/obj/item/ammo_box/magazine/m9mm = 2,
+		/obj/item/ammo_box/magazine/m9mm/hp = 1,
+		/obj/item/ammo_box/magazine/m9mm/ap = 1,
+	) // That was your [CONTRABAND CRATE]? That's just [FOUR MAGAZINES FOR A GUN NOBODY USES]!
+	crate_type = /obj/structure/closet/crate/secure/syndicate/gorlex/weapons/bustedlock
+	crate_name = "emergency crate"
+
+// not hookie's
+
